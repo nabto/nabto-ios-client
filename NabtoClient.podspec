@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = 'NabtoClient'
   s.platform     = :ios, "11.0"
   #  s.version      = ENV['IOS_PODS_VERSION_STRING']
-  s.version      = 4.3.1-beta1
+  s.version      = "4.3.1-beta1"
   s.summary      = "Nabto Client SDK"
   s.description  = <<-DESC
 The Nabto communication platform enables you to establish direct connections from a client to even the most resource constrained devices, regardless of the firewall configuration of each peer - a P2P middleware that supports IoT well. 
