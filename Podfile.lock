@@ -1,0 +1,16 @@
+PODS:
+  - NabtoAPI (1.0.0)
+
+DEPENDENCIES:
+  - NabtoAPI (= 1.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NabtoAPI
+
+SPEC CHECKSUMS:
+  NabtoAPI: 9b2ce8f53e1a5fe0ef7cedaa6efd26a3c933f67a
+
+PODFILE CHECKSUM: 205b5bc8e448bb46ffb12b9efa9ec2dbba5e951a
+
+COCOAPODS: 1.5.3
