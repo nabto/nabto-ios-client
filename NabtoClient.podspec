@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'NabtoClient'
   s.platform     = :ios, "11.0"
-  s.version      = '4.3.1-beta2'
+  s.version      = '4.3.1-beta1'
   s.summary      = 'Nabto Client SDK'
   s.description  = <<-DESC
 The Nabto communication platform enables you to establish direct connections from a client to even the most resource constrained devices, regardless of the firewall configuration of each peer - a P2P middleware that supports IoT well. 
@@ -14,11 +14,11 @@ DESC
   s.license      =   { :type => 'Commercial', :file => 'LICENSE' }
   s.author       = { 'Nabto' => 'apps@nabto.com' }
 
-  s.source           = { :git => 'https://github.com/nabto/nabto-ios-client.git', :tag => 'v4.3.1-beta2' }
+  s.source           = { :git => 'https://github.com/nabto/nabto-ios-client.git', :tag => 'v4.3.1-beta1' }
 
   s.source_files = 'Classes/NabtoClient.h', 'Classes/NabtoClient.mm'
   s.ios.libraries = 'c++', 'stdc++'
-  s.dependency  'NabtoAPI', '~> 0.0.3'
+  s.dependency  'NabtoAPI', '~> 1.0.0'
 
   s.preserve_paths = 'Classes/module.modulemap'
   
