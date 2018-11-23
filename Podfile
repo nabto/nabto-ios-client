@@ -1,4 +1,4 @@
-project 'NabtoClient/NabtoClient.xcodeproj'
+project 'NabtoClient.xcodeproj'
 
 platform :ios, '11.0'
 
