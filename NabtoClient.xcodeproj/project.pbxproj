@@ -10,8 +10,8 @@
 		60177B691E5599FA0071A1EC /* NabtoClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60177B681E5599FA0071A1EC /* NabtoClientTests.m */; };
 		60177B6B1E5599FA0071A1EC /* NabtoClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4472C1E54205C005A81AA /* NabtoClient.framework */; };
 		60B4473D1E54205C005A81AA /* NabtoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B4472F1E54205C005A81AA /* NabtoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60B447501E54265A005A81AA /* nabto_client_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B4474F1E542659005A81AA /* nabto_client_api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60B447521E54372E005A81AA /* NabtoClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60B447511E54372E005A81AA /* NabtoClient.mm */; };
+		CC56887F55ADC8346171FD58 /* libPods-NabtoClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 272A736349C76307BE21AF53 /* libPods-NabtoClient.a */; };
 		D4B9D16C1F42EBE900F43704 /* libnabto_client_api_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B447491E5421A9005A81AA /* libnabto_client_api_static.a */; };
 		D4B9D16D1F42EBE900F43704 /* libnabto_static_external.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4474A1E5421A9005A81AA /* libnabto_static_external.a */; };
 /* End PBXBuildFile section */
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		272A736349C76307BE21AF53 /* libPods-NabtoClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NabtoClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60177B661E5599FA0071A1EC /* NabtoClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NabtoClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60177B681E5599FA0071A1EC /* NabtoClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NabtoClientTests.m; sourceTree = "<group>"; };
 		60177B6A1E5599FA0071A1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,8 +39,9 @@
 		60B447301E54205C005A81AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60B447491E5421A9005A81AA /* libnabto_client_api_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnabto_client_api_static.a; path = ../Libs/lib/libnabto_client_api_static.a; sourceTree = "<group>"; };
 		60B4474A1E5421A9005A81AA /* libnabto_static_external.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnabto_static_external.a; path = ../Libs/lib/libnabto_static_external.a; sourceTree = "<group>"; };
-		60B4474F1E542659005A81AA /* nabto_client_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nabto_client_api.h; path = ../../../api/nabto_client_api.h; sourceTree = "<group>"; };
 		60B447511E54372E005A81AA /* NabtoClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NabtoClient.mm; sourceTree = "<group>"; };
+		A008FAD7F41422CA7549E59C /* Pods-NabtoClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NabtoClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-NabtoClient/Pods-NabtoClient.release.xcconfig"; sourceTree = "<group>"; };
+		CE2E954FBB177880341BCB6D /* Pods-NabtoClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NabtoClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NabtoClient/Pods-NabtoClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,22 @@
 			files = (
 				D4B9D16C1F42EBE900F43704 /* libnabto_client_api_static.a in Frameworks */,
 				D4B9D16D1F42EBE900F43704 /* libnabto_static_external.a in Frameworks */,
+				CC56887F55ADC8346171FD58 /* libPods-NabtoClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592961BB93D9A6D6AF396866 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE2E954FBB177880341BCB6D /* Pods-NabtoClient.debug.xcconfig */,
+				A008FAD7F41422CA7549E59C /* Pods-NabtoClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		60177B671E5599FA0071A1EC /* NabtoClientTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 				60177B671E5599FA0071A1EC /* NabtoClientTests */,
 				60B4472D1E54205C005A81AA /* Products */,
 				60B447481E5421A9005A81AA /* Frameworks */,
+				592961BB93D9A6D6AF396866 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +120,6 @@
 			children = (
 				60B447511E54372E005A81AA /* NabtoClient.mm */,
 				60B4472F1E54205C005A81AA /* NabtoClient.h */,
-				60B4474F1E542659005A81AA /* nabto_client_api.h */,
 				60B447301E54205C005A81AA /* Info.plist */,
 			);
 			path = NabtoClient;
@@ -118,6 +130,7 @@
 			children = (
 				60B447491E5421A9005A81AA /* libnabto_client_api_static.a */,
 				60B4474A1E5421A9005A81AA /* libnabto_static_external.a */,
+				272A736349C76307BE21AF53 /* libPods-NabtoClient.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				60B4473D1E54205C005A81AA /* NabtoClient.h in Headers */,
-				60B447501E54265A005A81AA /* nabto_client_api.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60B447401E54205C005A81AA /* Build configuration list for PBXNativeTarget "NabtoClient" */;
 			buildPhases = (
+				5ADB960B472B5F32E6548F21 /* [CP] Check Pods Manifest.lock */,
 				60B447271E54205C005A81AA /* Sources */,
 				60B447281E54205C005A81AA /* Frameworks */,
 				60B447291E54205C005A81AA /* Headers */,
@@ -228,6 +241,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ADB960B472B5F32E6548F21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NabtoClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60177B621E5599FA0071A1EC /* Sources */ = {
@@ -388,6 +426,7 @@
 		};
 		60B447411E54205C005A81AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE2E954FBB177880341BCB6D /* Pods-NabtoClient.debug.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "";
@@ -422,6 +461,7 @@
 		};
 		60B447421E54205C005A81AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A008FAD7F41422CA7549E59C /* Pods-NabtoClient.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
