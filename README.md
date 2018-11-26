@@ -42,4 +42,4 @@ pod install
 
 Then open the resulting `NabtoClient.xcworkspace` file.
 
-For building the full framework bundle use by CocoaPods, run `build.sh`.
+For building the full framework bundle as installed by CocoaPods, run `build.sh`.
