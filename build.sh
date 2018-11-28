@@ -21,6 +21,9 @@ function sdk {
     mkdir -p $IOS_FW_BUILD
     mkdir -p $IOS_FW_ARTIFACTS
 
+    cd $DIR
+    pod install
+
     # bitcode options from https://stackoverflow.com/questions/33106117/how-do-i-make-fat-framework-with-bitcode-option and https://medium.com/@heitorburger/static-libraries-frameworks-and-bitcode-6d8f784478a9
 
     xcodebuild -workspace NabtoClient.xcworkspace -UseModernBuildSystem=NO -scheme "${IOS_FW_PROJECT_NAME}" ONLY_ACTIVE_ARCH=NO -configuration Release -sdk iphoneos BUILD_DIR=${IOS_FW_BUILD} BUILD_ROOT="${IOS_FW_BUILD_ROOT}" OTHER_CFLAGS="-fembed-bitcode" BITCODE_GENERATION_MODE=bitcode clean build
