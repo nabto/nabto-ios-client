@@ -89,6 +89,5 @@
     [[NabtoClient instance] nabtoShutdown];
 }
 
-
 @end
 

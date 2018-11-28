@@ -97,6 +97,7 @@ typedef NS_ENUM(NSInteger, NabtoTunnelState) {
 struct NabtoOpaqueTunnel;
 typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 
+// TODO: missing docs for wrapper (NABTO-1911), see nabto_client_api.h for API documentation until fixed
 @interface NabtoClient : NSObject {
 }
 
@@ -121,6 +122,7 @@ typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 - (NabtoClientStatus)nabtoCloseSession;
 
 - (NabtoClientStatus)nabtoSetBasestationAuthJson:(NSString *)jsonKeyValuePairs;
+- (NabtoClientStatus)nabtoSetLocalConnectionPsk:(NSString *)host withPskId:(char[16])pskId withPsk:(char[16])psk;
 
 - (NabtoClientStatus)nabtoFetchUrl:(NSString *)url withResultBuffer:(char **)resultBuffer resultLength:(size_t *)resultLength mimeType:(char **)mimeType;
 - (NabtoClientStatus)nabtoSubmitPostData:(NSString *)url withBuffer:(NSString *)postBuffer resultBuffer:(char **)resultBuffer resultLength:(size_t *)resultLen mimeType:(char **)mimeType;
@@ -138,6 +140,8 @@ typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 - (int)nabtoTunnelError:(NabtoTunnelHandle)handle; // return the internal nabto error on the tunnel
 - (int)nabtoTunnelPort:(NabtoTunnelHandle)handle;
 - (NabtoClientStatus)nabtoTunnelClose:(NabtoTunnelHandle)handle;
+- (NabtoClientStatus)nabtoTunnelSetRecvWindowSize:(NabtoTunnelHandle)handle withRecvWindowSize:(int)recvWindowSize;
+- (NabtoClientStatus)nabtoTunnelSetSendWindowSize:(NabtoTunnelHandle)handle withSendWindowSize:(int)sendWindowSize;
 
 - (NabtoClientStatus)nabtoFree:(void *)p;
 

@@ -222,6 +222,10 @@ void nabtoLogCallback(const char* line, size_t size) {
     }
 }
 
+- (NabtoClientStatus)nabtoSetLocalConnectionPsk:(NSString *)host withPskId:(char[16])pskId withPsk:(char[16])psk {
+    return mapToClientStatus(nabtoSetLocalConnectionPsk(session_, [host UTF8String], pskId, psk));
+}
+
 - (NabtoClientStatus)nabtoSetBasestationAuthJson:(NSString *)jsonKeyValuePairs {
     return mapToClientStatus(nabtoSetBasestationAuthJson(session_, [jsonKeyValuePairs UTF8String]));
 }
@@ -307,6 +311,14 @@ void nabtoLogCallback(const char* line, size_t size) {
 
 - (NabtoClientStatus)nabtoTunnelClose:(NabtoTunnelHandle)handle {
     return mapToClientStatus(nabtoTunnelClose((nabto_tunnel_t)handle));
+}
+
+- (NabtoClientStatus)nabtoTunnelSetRecvWindowSize:(NabtoTunnelHandle)handle withRecvWindowSize:(int)recvWindowSize {
+    return mapToClientStatus(nabtoTunnelSetRecvWindowSize((nabto_tunnel_t)handle, (size_t)recvWindowSize));
+}
+
+- (NabtoClientStatus)nabtoTunnelSetSendWindowSize:(NabtoTunnelHandle)handle withSendWindowSize:(int)sendWindowSize {
+    return mapToClientStatus(nabtoTunnelSetSendWindowSize((nabto_tunnel_t)handle, (size_t)sendWindowSize));
 }
 
 - (NabtoClientStatus)nabtoFree:(void *)p {
