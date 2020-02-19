@@ -24,30 +24,30 @@
  *
  * The following is a full working API interaction to invoke an RPC function on a device adhering
  * to the specified interface:
- 
+
  if ([[NabtoClient instance] nabtoStartup] != NCS_OK) {
  // handle error
  }
  if ([[NabtoClient instance] nabtoOpenSessionGuest] != NCS_OK) {
  // handle error
  }
- 
+
  NSString* interfaceXml = @"<unabto_queries><query name='wind_speed.json' id='2'><request></request><response format='json'><parameter name='rpc_speed_m_s' type='uint32'/></response></query></unabto_queries>";
- 
+
  char* errorMsg;
  if ([[NabtoClient instance] nabtoRpcSetDefaultInterface:interfaceXml withErrorMessage:&errorMsg] != IOS_NABTO_OK) {
  // handle error
  }
- 
+
  char* json;
  NabtoClientStatus status = [[NabtoClient instance] nabtoRpcInvoke:@"nabto://demo.nabto.net/wind_speed.json?" withResultBuffer:&json];
  if (status == IOS_NABTO_OK) {
  NSLog(@"rpcInvoke finished with result: %s", json);
  nabtoFree(json);
  }
- 
+
  [[NabtoClient instance] nabtoShutdown];
- 
+
  */
 
 // see nabto_status enum in nabto_client_api.h for details
@@ -79,6 +79,7 @@ typedef NS_ENUM(NSInteger, NabtoClientStatus) {
     NCS_ABORTED,
     NCS_STREAM_CLOSED,
     NCS_FAILED_WITH_JSON_MESSAGE,
+    NCS_TIMEOUT,
     NCS_ERROR_CODE_COUNT
 };
 
@@ -135,6 +136,7 @@ typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 - (NSString *)nabtoGetSessionToken;
 
 - (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host onPort:(int)port;
+- (NabtoClientStatus)nabtoTunnelWait:(NabtoTunnelHandle)handle pollPeriodMillis:(int)pollPeriodMillis timeoutMillis:(int)timeoutMillis resultingState:(NabtoTunnelState*)resultingState;
 - (int)nabtoTunnelVersion:(NabtoTunnelHandle)handle;
 - (NabtoTunnelState)nabtoTunnelInfo:(NabtoTunnelHandle)handle;
 - (int)nabtoTunnelError:(NabtoTunnelHandle)handle; // return the internal nabto error on the tunnel

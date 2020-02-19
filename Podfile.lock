@@ -1,16 +1,16 @@
 PODS:
-  - NabtoAPI (1.0.0)
+  - NabtoAPI (1.1.0)
 
 DEPENDENCIES:
-  - NabtoAPI (= 1.0.0)
+  - NabtoAPI (= 1.1.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - NabtoAPI
 
 SPEC CHECKSUMS:
-  NabtoAPI: 9b2ce8f53e1a5fe0ef7cedaa6efd26a3c933f67a
+  NabtoAPI: 00587dc17464b7b937060bacbca0d378390a3948
 
-PODFILE CHECKSUM: 205b5bc8e448bb46ffb12b9efa9ec2dbba5e951a
+PODFILE CHECKSUM: 4c5658f775d285bcc15e436d7b4e7d7b0b3637fa
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.0.beta.3

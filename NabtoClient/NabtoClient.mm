@@ -65,6 +65,7 @@ NabtoClientStatus mapToClientStatus(nabto_status apiStatus) {
         case NABTO_ABORTED: return                            NCS_ABORTED;
         case NABTO_STREAM_CLOSED: return                      NCS_STREAM_CLOSED;
         case NABTO_FAILED_WITH_JSON_MESSAGE: return           NCS_FAILED_WITH_JSON_MESSAGE;
+        case NABTO_TIMEOUT: return                            NCS_TIMEOUT;
         case NABTO_ERROR_CODE_COUNT: return                   NCS_ERROR_CODE_COUNT;
         default: assert(!"never here");
     }
@@ -284,6 +285,16 @@ void nabtoLogCallback(const char* line, size_t size) {
 - (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host onPort:(int)port {
     return mapToClientStatus(nabtoTunnelOpenTcp((nabto_tunnel_t *)handle, session_, 0, [host UTF8String], "127.0.0.1", port));
 }
+
+- (NabtoClientStatus)nabtoTunnelWait:(NabtoTunnelHandle)handle pollPeriodMillis:(int)pollPeriodMillis timeoutMillis:(int)timeoutMillis resultingState:(NabtoTunnelState*)resultingState {
+    nabto_tunnel_state_t state;
+    nabto_status st = nabtoTunnelWait((nabto_tunnel_t)handle, pollPeriodMillis, timeoutMillis, &state);
+    if (st = NABTO_OK) {
+        *resultingState = mapToTunnelState(state);
+    }
+    return mapToClientStatus(st);
+}
+
 
 - (int)nabtoTunnelVersion:(NabtoTunnelHandle)handle {
     int version = 0;
