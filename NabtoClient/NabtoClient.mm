@@ -289,7 +289,7 @@ void nabtoLogCallback(const char* line, size_t size) {
 - (NabtoClientStatus)nabtoTunnelWait:(NabtoTunnelHandle)handle pollPeriodMillis:(int)pollPeriodMillis timeoutMillis:(int)timeoutMillis resultingState:(NabtoTunnelState*)resultingState {
     nabto_tunnel_state_t state;
     nabto_status st = nabtoTunnelWait((nabto_tunnel_t)handle, pollPeriodMillis, timeoutMillis, &state);
-    if (st = NABTO_OK) {
+    if (st == NABTO_OK) {
         *resultingState = mapToTunnelState(state);
     }
     return mapToClientStatus(st);
