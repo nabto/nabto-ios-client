@@ -360,6 +360,9 @@ void nabtoLogCallback(const char* line, size_t size) {
         case NCS_INVALID_TUNNEL: return @"an invalid tunnel handle was specified";
         case NCS_ILLEGAL_PARAMETER: return @"a parameter to a function is not supported";
         case NCS_INVALID_RESOURCE: return @"an invalid asynchronous resource was specified";
+        case NCS_ABORTED: return @"the operation was aborted";
+        case NCS_FAILED_WITH_JSON_MESSAGE: return @"the operation failed, detailed error message is available";
+        case NCS_TIMEOUT: return @"the operation timed out";
         case NCS_ERROR_CODE_COUNT: return @"number of possible error codes";
         default: return @"(unknown api status)";
     }
