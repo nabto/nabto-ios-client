@@ -283,7 +283,11 @@ void nabtoLogCallback(const char* line, size_t size) {
 }
 
 - (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host onPort:(int)port {
-    return mapToClientStatus(nabtoTunnelOpenTcp((nabto_tunnel_t *)handle, session_, 0, [host UTF8String], "127.0.0.1", port));
+    return [self nabtoTunnelOpenTcp:handle toHost:host remoteHost:@"127.0.0.1" onPort:port];
+}
+
+- (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host remoteHost:(NSString *)remoteHost onPort:(int)port {
+    return mapToClientStatus(nabtoTunnelOpenTcp((nabto_tunnel_t *)handle, session_, 0, [host UTF8String], [remoteHost UTF8String], port));
 }
 
 - (NabtoClientStatus)nabtoTunnelWait:(NabtoTunnelHandle)handle pollPeriodMillis:(int)pollPeriodMillis timeoutMillis:(int)timeoutMillis resultingState:(NabtoTunnelState*)resultingState {

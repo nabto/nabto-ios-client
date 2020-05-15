@@ -136,6 +136,7 @@ typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 - (NSString *)nabtoGetSessionToken;
 
 - (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host onPort:(int)port;
+- (NabtoClientStatus)nabtoTunnelOpenTcp:(NabtoTunnelHandle *)handle toHost:(NSString *)host remoteHost:(NSString *)remoteHost onPort:(int)port;
 - (NabtoClientStatus)nabtoTunnelWait:(NabtoTunnelHandle)handle pollPeriodMillis:(int)pollPeriodMillis timeoutMillis:(int)timeoutMillis resultingState:(NabtoTunnelState*)resultingState;
 - (int)nabtoTunnelVersion:(NabtoTunnelHandle)handle;
 - (NabtoTunnelState)nabtoTunnelInfo:(NabtoTunnelHandle)handle;
