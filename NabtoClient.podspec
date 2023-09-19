@@ -23,7 +23,7 @@ This is a legacy product. To use the current generation Nabto platform from iOS,
 
   s.public_header_files = 'NabtoClient.framework/Headers/**/*.h'
   s.author           = { 'nabto' => 'apps@nabto.com' }
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.ios.preserve_paths = 'NabtoClient.framework'
   s.vendored_frameworks = 'NabtoClient.framework'
   s.ios.libraries = 'c++', 'stdc++'
