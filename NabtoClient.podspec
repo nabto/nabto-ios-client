@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NabtoClient'
-  s.version      = "7.0.1"
+  s.version      = "7.1.0"
   s.summary      = "Nabto 4/Micro Client SDK"
   s.description  = <<-DESC
 The Nabto communication platform enables you to establish direct connections from a client to even the most resource constrained devices, regardless of the firewall configuration of each peer - a P2P middleware that supports IoT well.
