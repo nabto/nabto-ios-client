@@ -98,6 +98,14 @@ typedef NS_ENUM(NSInteger, NabtoTunnelState) {
 struct NabtoOpaqueTunnel;
 typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 
+/**
+ * Definition of the callback function for the nabtoRegisterLogCallback
+ * function. This should use the NABTOAPI calling convention in the future.
+ * @param line     The line to log.
+ * @param size     The length of the line.
+ */
+typedef void (*NabtoLogCallbackFunc)(const char* line , size_t size);
+
 // TODO: missing docs for wrapper (NABTO-1911), see nabto_client_api.h for API documentation until fixed
 @interface NabtoClient : NSObject {
 }
@@ -145,6 +153,9 @@ typedef struct NabtoOpaqueTunnel* NabtoTunnelHandle;
 - (NabtoClientStatus)nabtoTunnelClose:(NabtoTunnelHandle)handle;
 - (NabtoClientStatus)nabtoTunnelSetRecvWindowSize:(NabtoTunnelHandle)handle withRecvWindowSize:(int)recvWindowSize;
 - (NabtoClientStatus)nabtoTunnelSetSendWindowSize:(NabtoTunnelHandle)handle withSendWindowSize:(int)sendWindowSize;
+
+- (NabtoClientStatus)nabtoRegisterLogCallback:(NabtoLogCallbackFunc)callback;
+
 
 - (NabtoClientStatus)nabtoFree:(void *)p;
 

@@ -336,6 +336,10 @@ void nabtoLogCallback(const char* line, size_t size) {
     return mapToClientStatus(nabtoTunnelSetSendWindowSize((nabto_tunnel_t)handle, (size_t)sendWindowSize));
 }
 
+- (NabtoClientStatus)nabtoRegisterLogCallback:(NabtoLogCallbackFunc)callback {
+    return mapToClientStatus(nabtoRegisterLogCallback(callback));
+}
+
 - (NabtoClientStatus)nabtoFree:(void *)p {
     return mapToClientStatus(nabtoFree(p));
 }
