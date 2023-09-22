@@ -329,11 +329,11 @@ void nabtoLogCallback(const char* line, size_t size) {
 }
 
 - (NabtoClientStatus)nabtoTunnelSetRecvWindowSize:(NabtoTunnelHandle)handle withRecvWindowSize:(int)recvWindowSize {
-    return mapToClientStatus(nabtoTunnelSetRecvWindowSize((nabto_tunnel_t)handle, (size_t)recvWindowSize));
+    return mapToClientStatus(nabtoTunnelSetRecvWindowSize((nabto_tunnel_t)handle, (int)recvWindowSize));
 }
 
 - (NabtoClientStatus)nabtoTunnelSetSendWindowSize:(NabtoTunnelHandle)handle withSendWindowSize:(int)sendWindowSize {
-    return mapToClientStatus(nabtoTunnelSetSendWindowSize((nabto_tunnel_t)handle, (size_t)sendWindowSize));
+    return mapToClientStatus(nabtoTunnelSetSendWindowSize((nabto_tunnel_t)handle, (int)sendWindowSize));
 }
 
 - (NabtoClientStatus)nabtoRegisterLogCallback:(NabtoLogCallbackFunc)callback {

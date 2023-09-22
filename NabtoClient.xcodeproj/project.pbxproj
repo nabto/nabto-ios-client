@@ -12,8 +12,6 @@
 		60B4473D1E54205C005A81AA /* NabtoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B4472F1E54205C005A81AA /* NabtoClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60B447521E54372E005A81AA /* NabtoClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60B447511E54372E005A81AA /* NabtoClient.mm */; };
 		CC56887F55ADC8346171FD58 /* libPods-NabtoClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 272A736349C76307BE21AF53 /* libPods-NabtoClient.a */; };
-		D4B9D16C1F42EBE900F43704 /* libnabto_client_api_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B447491E5421A9005A81AA /* libnabto_client_api_static.a */; };
-		D4B9D16D1F42EBE900F43704 /* libnabto_static_external.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4474A1E5421A9005A81AA /* libnabto_static_external.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B9D16C1F42EBE900F43704 /* libnabto_client_api_static.a in Frameworks */,
-				D4B9D16D1F42EBE900F43704 /* libnabto_static_external.a in Frameworks */,
 				CC56887F55ADC8346171FD58 /* libPods-NabtoClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,8 +318,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
-				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -363,10 +357,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,8 +372,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
-				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -414,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
