@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NabtoClient'
-  s.version      = "7.2.0-rc3"
+  s.version      = "7.3.0-rc1"
   s.summary      = "Nabto 4/Micro Client SDK"
   s.description  = <<-DESC
 The Nabto communication platform enables you to establish direct connections from a client to even the most resource constrained devices, regardless of the firewall configuration of each peer - a P2P middleware that supports IoT well.
@@ -16,8 +16,8 @@ This is a legacy product. To use the current generation Nabto platform from iOS,
   s.author           = { 'Nabto' => 'apps@nabto.com' }
   s.homepage         = 'https://www.nabto.com'
   s.license      = { :type => 'Commercial', :file => 'NabtoClient.xcframework/LICENSE' }
-  s.platform         = :ios, '11.0'
+  s.platform         = :ios, '14.5'
   s.source_files     = 'NabtoClient/**/*.{h,m,mm}'
   s.source           = { :git => 'https://github.com/nabto/nabto-ios-client.git', :tag => s.version.to_s }
-  s.dependency 'NabtoAPI', '~> 4.7.1-rc2'
+  s.dependency 'NabtoAPI', '~> 4.7.2-rc1'
 end
