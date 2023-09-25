@@ -15,7 +15,7 @@ This is a legacy product. To use the current generation Nabto platform from iOS,
                    DESC
   s.author           = { 'Nabto' => 'apps@nabto.com' }
   s.homepage         = 'https://www.nabto.com'
-  s.license      = { :type => 'Commercial', :file => 'NabtoClient.xcframework/LICENSE' }
+  s.license      = { :type => 'Commercial', :file => 'LICENSE' }
   s.platform         = :ios, '14.5'
   s.source_files     = 'NabtoClient/**/*.{h,m,mm}'
   s.source           = { :git => 'https://github.com/nabto/nabto-ios-client.git', :tag => s.version.to_s }
