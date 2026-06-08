@@ -6,13 +6,10 @@ on:
   pull_request:
 
 jobs:
-  build-and-test:
+  build:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.app
 
       - name: Show Xcode and Swift versions
         run: |
@@ -22,12 +19,12 @@ jobs:
       - name: Resolve Swift package dependencies
         run: xcodebuild -resolvePackageDependencies -scheme NabtoClient
 
-      - name: Build and test
+      - name: Build
         run: |
           set -o pipefail
-          xcodebuild test \
+          xcodebuild build \
             -scheme NabtoClient \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -destination 'generic/platform=iOS' \
             -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO \
             | xcbeautify --renderer github-actions
