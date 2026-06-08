@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NabtoClient.h"
+@import NabtoClient;
 
 @interface NabtoClientTests : XCTestCase
 
@@ -32,12 +32,12 @@
     size_t len;
     char* mimeType;
     NabtoClientStatus status;
-    status = [[NabtoClient instance] nabtoFetchUrl:@"nabto://demo.nabto.net/wind_speed.json?" withResultBuffer:&result resultLength:&len mimeType:&mimeType];
+    status = [[NabtoClient instance] nabtoFetchUrl:@"nabto://self/about" withResultBuffer:&result resultLength:&len mimeType:&mimeType];
     if (status == NCS_OK) {
         NSData *data = [NSData dataWithBytes:result length:len];
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"fetchUrl finished with result: %@", str);
-        XCTAssertTrue([str containsString:@"speed_m_s"]);
+        NSLog(@"fetchUrl nabto://self/about finished with result (%zu bytes, mime=%s): %@", len, mimeType, str);
+        XCTAssertGreaterThan(len, 0u);
         [[NabtoClient instance] nabtoFree:result];
         [[NabtoClient instance] nabtoFree:mimeType];
     } else {

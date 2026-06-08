@@ -1,2 +1,0 @@
-_OBJC_CLASS_$_NabtoClient
-_OBJC_METACLASS_$_NabtoClient

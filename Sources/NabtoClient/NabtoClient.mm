@@ -5,7 +5,7 @@
  */
 
 #import "NabtoClient.h"
-#import "NabtoAPI/nabto_client_api.h"
+#import <NabtoAPI/nabto_client_api.h>
 
 @implementation NabtoClient
 {
