@@ -40,3 +40,27 @@ Then import the module:
 ## Underlying SDK
 
 The package pulls the `NabtoAPI.xcframework` (Nabto 4/Micro Client SDK, currently 4.9.0) directly from `downloads.nabto.com` as a SwiftPM binary target. No additional setup is required.
+
+## Building and testing
+
+The package targets iOS, so building and running the tests requires a Mac with Xcode 16 (or newer) and an iOS Simulator runtime.
+
+Build:
+
+```sh
+xcodebuild build \
+    -scheme NabtoClient \
+    -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
+```
+
+Run the tests:
+
+```sh
+xcodebuild test \
+    -scheme NabtoClient \
+    -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
+```
+
+Note that some tests reach out to `demo.nabto.net` and require network connectivity to pass.
+
+The same build and test commands run automatically on every pull request and on every push to `master` via the GitHub Actions workflow in `.github/workflows/ci.yml`.
