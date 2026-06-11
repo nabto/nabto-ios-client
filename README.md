@@ -39,7 +39,7 @@ Then import the module:
 
 ## Underlying SDK
 
-The package pulls the `NabtoAPI.xcframework` (Nabto 4/Micro Client SDK, currently 4.9.0) directly from `downloads.nabto.com` as a SwiftPM binary target. No additional setup is required.
+The package pulls the `NabtoAPI.xcframework` (Nabto 4/Micro Client SDK) directly from `downloads.nabto.com` as a SwiftPM binary target. No additional setup is required.
 
 ## Building and testing
 
