@@ -10,8 +10,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NabtoAPI",
-            url: "https://downloads.nabto.com/assets/nabto-libs/v4.9.6/NabtoAPI.xcframework.zip",
-            checksum: "e9838e4af1ac1ba1f681dfc472da1293739e5ccf933f59f1363723c3a8ce10b1"
+            url: "https://downloads.nabto.com/assets/nabto-libs/v4.9.11/NabtoAPI.xcframework.zip",
+            checksum: "f2cec7d54c020bc46d12acac69b7d51f8f6e4b689e41c828aa50bf9311cc15f4"
         ),
         .target(
             name: "NabtoClient",
