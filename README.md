@@ -14,7 +14,7 @@ Add the package as a dependency in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/nabto/nabto-ios-client.git", from: "7.4.0"),
+    .package(url: "https://github.com/nabto/nabto-ios-client.git", from: "8.0.0"),
 ],
 targets: [
     .target(
