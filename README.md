@@ -1,4 +1,4 @@
-# Nabto Client SDK for iOS
+# Nabto 4 Client SDK for iOS
 
 The Nabto communication platform enables you to establish direct connections from a client to even the most resource constrained devices, regardless of the firewall configuration of each peer - a P2P middleware that supports IoT well.
 
