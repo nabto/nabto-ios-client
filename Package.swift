@@ -17,7 +17,10 @@ let package = Package(
             name: "NabtoClient",
             dependencies: ["NabtoAPI"],
             path: "Sources/NabtoClient",
-            publicHeadersPath: "include"
+            publicHeadersPath: "include",
+            linkerSettings: [
+                .linkedFramework("Foundation")
+            ]
         ),
         .testTarget(
             name: "NabtoClientTests",
